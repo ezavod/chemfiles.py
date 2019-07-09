@@ -14,9 +14,15 @@ sys.path.insert(1, os.path.join(ROOT, ".."))
 # ones.
 extensions = [
     'sphinx.ext.autodoc',
-    'htmlhidden'
+    'numpydoc',
+    'htmlhidden',
 ]
 autoclass_content = 'both'
+
+# numpydoc configuration
+numpydoc_show_inherited_class_members = False
+numpydoc_class_members_toctree = False
+numpydoc_xref_param_type = True
 
 # The suffix of source filenames.
 source_suffix = '.rst'
