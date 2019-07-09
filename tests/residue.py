@@ -79,10 +79,10 @@ class TestResidue(unittest.TestCase):
             with self.assertRaises(ChemfilesError):
                 _ = residue["bar"]
 
-            with self.assertRaises(ChemfilesError):
+            with self.assertRaises(TypeError):
                 residue[3] = "test"
 
-            with self.assertRaises(ChemfilesError):
+            with self.assertRaises(TypeError):
                 _ = residue[3]
 
         # Check that enabling indexing/__getitem__ did not enable iteration

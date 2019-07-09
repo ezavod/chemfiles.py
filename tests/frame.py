@@ -147,10 +147,10 @@ class TestFrame(unittest.TestCase):
             with self.assertRaises(ChemfilesError):
                 _ = frame["bar"]
 
-            with self.assertRaises(ChemfilesError):
+            with self.assertRaises(TypeError):
                 frame[3] = "test"
 
-            with self.assertRaises(ChemfilesError):
+            with self.assertRaises(TypeError):
                 _ = frame[3]
 
         # Check that enabling indexing/__getitem__ did not enable iteration

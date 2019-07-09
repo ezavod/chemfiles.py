@@ -84,10 +84,10 @@ class TestAtom(unittest.TestCase):
             with self.assertRaises(ChemfilesError):
                 _ = atom["bar"]
 
-            with self.assertRaises(ChemfilesError):
+            with self.assertRaises(TypeError):
                 atom[3] = "test"
 
-            with self.assertRaises(ChemfilesError):
+            with self.assertRaises(TypeError):
                 _ = atom[3]
 
         # Check that enabling indexing/__getitem__ did not enable iteration

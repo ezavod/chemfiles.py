@@ -34,7 +34,7 @@ class TestProperty(unittest.TestCase):
         self.assertEqual(prop.get(), (3, 4, 5))
 
     def test_bad(self):
-        with self.assertRaises(ChemfilesError):
+        with self.assertRaises(TypeError):
             _ = Property(ArithmeticError)
 
 

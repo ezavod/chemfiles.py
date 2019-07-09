@@ -307,7 +307,7 @@ class Frame(CxxPointer):
         if the property does not exists.
         """
         if not isinstance(name, string_type):
-            raise ChemfilesError(
+            raise TypeError(
                 "Invalid type {} for a frame property name".format(type(name))
             )
         ptr = self.ffi.chfl_frame_get_property(self.ptr, name.encode("utf8"))
@@ -319,7 +319,7 @@ class Frame(CxxPointer):
         The new value overwrite any pre-existing property with the same name.
         """
         if not isinstance(name, string_type):
-            raise ChemfilesError(
+            raise TypeError(
                 "Invalid type {} for a frame property name".format(type(name))
             )
         property = Property(value)

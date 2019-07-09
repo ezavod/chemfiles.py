@@ -30,7 +30,7 @@ class Property(CxxPointer):
             value = chfl_vector3d(value[0], value[1], value[2])
             ptr = self.ffi.chfl_property_vector3d(value)
         else:
-            raise ChemfilesError(
+            raise TypeError(
                 "can not create a Property with a value of type '{}'".format(type(value))
             )
 

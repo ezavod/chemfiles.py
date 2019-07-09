@@ -115,7 +115,7 @@ class Residue(CxxPointer):
         error if the property does not exists.
         """
         if not isinstance(name, string_type):
-            raise ChemfilesError(
+            raise TypeError(
                 "Invalid type {} for a residue property name".format(type(name))
             )
         ptr = self.ffi.chfl_residue_get_property(self.ptr, name.encode("utf8"))
@@ -127,7 +127,7 @@ class Residue(CxxPointer):
         The new value overwrite any pre-existing property with the same name.
         """
         if not isinstance(name, string_type):
-            raise ChemfilesError(
+            raise TypeError(
                 "Invalid type {} for a residue property name".format(type(name))
             )
         property = Property(value)

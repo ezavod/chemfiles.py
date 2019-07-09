@@ -150,7 +150,7 @@ class Atom(CxxPointer):
         if the property does not exists.
         """
         if not isinstance(name, string_type):
-            raise ChemfilesError(
+            raise TypeError(
                 "Invalid type {} for an atomic property name".format(type(name))
             )
         ptr = self.ffi.chfl_atom_get_property(self.ptr, name.encode("utf8"))
@@ -162,7 +162,7 @@ class Atom(CxxPointer):
         The new value overwrite any pre-existing property with the same name.
         """
         if not isinstance(name, string_type):
-            raise ChemfilesError(
+            raise TypeError(
                 "invalid type {} for a property name".format(type(name))
             )
         property = Property(value)
