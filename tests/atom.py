@@ -96,8 +96,6 @@ class TestAtom(unittest.TestCase):
                 pass
 
         atom["bar"] = "baz"
-
-        self.assertEqual(atom.properties_count(), 2)
         self.assertEqual(set(atom.list_properties()), {"bar", "foo"})
 
 

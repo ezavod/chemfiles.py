@@ -170,15 +170,12 @@ class Atom(CxxPointer):
             self.mut_ptr, name.encode("utf8"), property.ptr
         )
 
-    def properties_count(self):
-        """Get the number of properties in this atom."""
-        count = c_uint64()
-        self.ffi.chfl_atom_properties_count(self.ptr, count)
-        return count.value
-
     def list_properties(self):
         """Get the name of all properties in this atom."""
-        count = self.properties_count()
+        count = c_uint64()
+        self.ffi.chfl_atom_properties_count(self.ptr, count)
+        count = count.value
+
         StringArray = c_char_p * count
         names = StringArray()
         self.ffi.chfl_atom_list_properties(self.ptr, names, count)

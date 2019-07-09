@@ -159,8 +159,6 @@ class TestFrame(unittest.TestCase):
                 pass
 
         frame["bar"] = "baz"
-
-        self.assertEqual(frame.properties_count(), 2)
         self.assertEqual(set(frame.list_properties()), {"bar", "foo"})
 
     def test_distance(self):

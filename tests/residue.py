@@ -91,8 +91,6 @@ class TestResidue(unittest.TestCase):
                 pass
 
         residue["bar"] = "baz"
-
-        self.assertEqual(residue.properties_count(), 2)
         self.assertEqual(set(residue.list_properties()), {"bar", "foo"})
 
 
